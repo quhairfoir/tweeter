@@ -3,10 +3,17 @@
 }
 
 .tweet {
-  border: 1px solid;
+  border: 2px solid;
   border-radius: 5px;
   border-color: lightgrey;
   margin: 20px 2em 2em 2em;
+  opacity: .8;
+}
+
+.tweet:hover {
+  border-color: grey;
+  opacity: 1.0;
+
 }
 
 .tweet header {
