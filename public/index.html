@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="styles/tweet.css" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,700,700i" rel="stylesheet">
 
     <!-- App CSS -->
@@ -31,26 +32,25 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-        <section class="new-tweet">
-            <h2>Compose Tweet</h2>
-            <form action="/tweets/" method="POST">
-              <textarea name="text" placeholder="What are you humming about?"></textarea>
-              <input type="submit" value="Tweet">
-              <span class="counter">140</span>
-            </form>
-          </section>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis arcu sed odio vulputate tristique non hendrerit lectus. Donec id urna in odio fermentum tristique sit amet quis nisi. Fusce pulvinar urna scelerisque sollicitudin condimentum. In quis nulla laoreet, blandit justo eget, congue orci. Nunc et erat ut justo iaculis tempor. Duis interdum tellus ut fringilla blandit. Nulla justo dolor, consectetur at est ac, rhoncus vulputate dolor. Aliquam porta quis est volutpat luctus. Curabitur at laoreet purus, eget posuere lorem. Cras sollicitudin interdum leo ut vulputate. Praesent fringilla, justo non vestibulum tincidunt, orci eros ornare mi, in posuere justo dui a erat. Donec a diam et erat dignissim bibendum. Pellentesque tempus porttitor risus id scelerisque. Pellentesque vitae nulla et erat malesuada condimentum. Curabitur cursus risus turpis, in porta eros congue non. Nulla vel ornare tellus.</p>
-      <p> Aliquam erat volutpat. Fusce semper porta augue, et tempor enim placerat a. Donec pharetra, ex interdum imperdiet malesuada, ante purus euismod justo, vitae imperdiet augue ligula ut metus. In hac habitasse platea dictumst. Etiam eget ligula vitae velit fermentum ornare. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis hendrerit felis sit amet diam tempor, in cursus elit feugiat. Duis mattis nulla vel quam mattis, id pellentesque tellus pretium.</p>
-      <p>In facilisis porttitor dolor sit amet fermentum. Vestibulum pretium at quam a bibendum. Vivamus dignissim mauris nec odio venenatis, sit amet ultricies est finibus. In dui nibh, varius in risus at, blandit porttitor mauris. Morbi pulvinar metus vitae eros facilisis, a pellentesque sapien porttitor. Nam molestie tortor tortor, et consequat elit ultricies ac. Integer molestie ligula sem, ac faucibus magna dictum vel. Nullam gravida bibendum ante, id feugiat justo posuere nec.</p>
-      <p>Duis fermentum dui magna, at hendrerit justo sodales a. Donec posuere urna vitae eros consequat, placerat hendrerit sapien cursus. Vivamus felis nulla, dapibus nec massa non, facilisis convallis enim. Curabitur cursus, justo a malesuada scelerisque, ipsum turpis pellentesque est, eget volutpat sapien arcu sed nibh. Etiam convallis nec odio ut varius. Donec mattis est at erat pharetra, non dictum nisi hendrerit. Nulla facilisi.</p>
-      <p>Donec iaculis sem et auctor facilisis. Donec id sodales nulla. Cras vel est ipsum. Vivamus interdum sagittis lorem, non laoreet odio dignissim et. Duis condimentum tempus tincidunt. Phasellus ante mauris, viverra vitae blandit sit amet, fringilla eu ante. Phasellus consequat libero sit amet mi hendrerit, sit amet feugiat magna mollis. Aenean metus dui, fringilla vel aliquet vitae, viverra sed lacus. Sed facilisis vestibulum lacus eu scelerisque. Ut sed placerat magna. Integer malesuada tortor libero. Vestibulum tristique nisl orci, nec semper dolor condimentum id.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis arcu sed odio vulputate tristique non hendrerit lectus. Donec id urna in odio fermentum tristique sit amet quis nisi. Fusce pulvinar urna scelerisque sollicitudin condimentum. In quis nulla laoreet, blandit justo eget, congue orci. Nunc et erat ut justo iaculis tempor. Duis interdum tellus ut fringilla blandit. Nulla justo dolor, consectetur at est ac, rhoncus vulputate dolor. Aliquam porta quis est volutpat luctus. Curabitur at laoreet purus, eget posuere lorem. Cras sollicitudin interdum leo ut vulputate. Praesent fringilla, justo non vestibulum tincidunt, orci eros ornare mi, in posuere justo dui a erat. Donec a diam et erat dignissim bibendum. Pellentesque tempus porttitor risus id scelerisque. Pellentesque vitae nulla et erat malesuada condimentum. Curabitur cursus risus turpis, in porta eros congue non. Nulla vel ornare tellus.</p>
-      <p> Aliquam erat volutpat. Fusce semper porta augue, et tempor enim placerat a. Donec pharetra, ex interdum imperdiet malesuada, ante purus euismod justo, vitae imperdiet augue ligula ut metus. In hac habitasse platea dictumst. Etiam eget ligula vitae velit fermentum ornare. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis hendrerit felis sit amet diam tempor, in cursus elit feugiat. Duis mattis nulla vel quam mattis, id pellentesque tellus pretium.</p>
-      <p>In facilisis porttitor dolor sit amet fermentum. Vestibulum pretium at quam a bibendum. Vivamus dignissim mauris nec odio venenatis, sit amet ultricies est finibus. In dui nibh, varius in risus at, blandit porttitor mauris. Morbi pulvinar metus vitae eros facilisis, a pellentesque sapien porttitor. Nam molestie tortor tortor, et consequat elit ultricies ac. Integer molestie ligula sem, ac faucibus magna dictum vel. Nullam gravida bibendum ante, id feugiat justo posuere nec.</p>
-      <p>Duis fermentum dui magna, at hendrerit justo sodales a. Donec posuere urna vitae eros consequat, placerat hendrerit sapien cursus. Vivamus felis nulla, dapibus nec massa non, facilisis convallis enim. Curabitur cursus, justo a malesuada scelerisque, ipsum turpis pellentesque est, eget volutpat sapien arcu sed nibh. Etiam convallis nec odio ut varius. Donec mattis est at erat pharetra, non dictum nisi hendrerit. Nulla facilisi.</p>
-      <p>Donec iaculis sem et auctor facilisis. Donec id sodales nulla. Cras vel est ipsum. Vivamus interdum sagittis lorem, non laoreet odio dignissim et. Duis condimentum tempus tincidunt. Phasellus ante mauris, viverra vitae blandit sit amet, fringilla eu ante. Phasellus consequat libero sit amet mi hendrerit, sit amet feugiat magna mollis. Aenean metus dui, fringilla vel aliquet vitae, viverra sed lacus. Sed facilisis vestibulum lacus eu scelerisque. Ut sed placerat magna. Integer malesuada tortor libero. Vestibulum tristique nisl orci, nec semper dolor condimentum id.</p>
-    
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form action="/tweets/" method="POST">
+          <textarea name="text" placeholder="What are you humming about?"></textarea>
+          <input type="submit" value="Tweet">
+          <span class="counter">140</span>
+        </form>
+      </section>
+      <div id="tweetholder" class="container">
+        <article class="tweet">
+          <header>
+            <img src="http://placekitten.com/50/50">
+            <h2>Mr. Bojangles</h2>
+            <p>@mstrcat</p>
+          </header>
+          <p>Some tweet text!</p>
+          <footer>6 days ago</footer>
+        </article>
+      </div>
     </main>
 
   </body>

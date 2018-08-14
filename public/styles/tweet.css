@@ -1,0 +1,40 @@
+#tweetholder {
+  overflow: auto;
+}
+
+.tweet {
+  border: 1px solid;
+  border-radius: 5px;
+  border-color: lightgrey;
+  margin: 20px 2em 2em 2em;
+}
+
+.tweet header {
+  background-color: #eee;
+  padding: 10px;
+}
+
+.tweet header h2 {
+  display: inline-block;
+  margin: 0 0 0 10px;
+  position: absolute;
+}
+
+.tweet header p {
+  float: right;
+  padding: 0;
+}
+
+.tweet p {
+  padding: 25px 5px 25px 5px;
+}
+
+.tweet header img {
+  border-radius: 5px;
+}
+
+.tweet footer {
+  border-top: 1px solid gainsboro;
+  padding: 10px 10px 10px 10px;
+  font-size: .8em;
+}
