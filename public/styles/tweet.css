@@ -50,10 +50,25 @@
 .tweet header img {
   border-radius: 5px;
   float: left;
+  opacity: .8;
+}
+
+.tweet:hover header img {
+  opacity: 1;
 }
 
 .tweet footer {
   border-top: 1px solid gainsboro;
   padding: 10px 10px 10px 10px;
   font-size: .8em;
+}
+
+.tweet footer i {
+  float: right;
+  padding: 2.5px 5px 0 0;
+  visibility: hidden;
+}
+
+.tweet:hover footer i {
+  visibility: visible;
 }

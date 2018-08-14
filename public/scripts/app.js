@@ -9,6 +9,13 @@ $(document).ready(function() {
   const createTweetElement = function (tweetObj) {
   let $tweet = $("<article>").addClass("tweet");
     $tweet.append("<header>");
+    $("<header>").append("<h2>");
+    $("<header>").append("<img>");
+    $("<header>").append("<p>");
+    $tweet.append("<p>");
+    $tweet.append("<footer>");
   return $tweet;
   };
+
+  console.log(createTweetElement());
 });
