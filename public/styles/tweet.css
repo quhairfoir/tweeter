@@ -7,29 +7,40 @@
   border-radius: 5px;
   border-color: lightgrey;
   margin: 20px 2em 2em 2em;
-  opacity: .8;
 }
 
 .tweet:hover {
   border-color: grey;
-  opacity: 1.0;
+}
 
+.tweet:hover header {
+  background-color: #d4d4d4;
 }
 
 .tweet header {
   background-color: #eee;
   padding: 10px;
+  overflow: auto;
 }
 
 .tweet header h2 {
-  display: inline-block;
-  margin: 0 0 0 10px;
-  position: absolute;
+  display: inline;
+  margin: 0 0 0 5px;
+  color: #346674;
+}
+
+.tweet:hover h2 {
+  color: #244751;
 }
 
 .tweet header p {
   float: right;
   padding: 0;
+  color: darkgrey;
+}
+
+.tweet:hover header p {
+  color: grey;
 }
 
 .tweet p {
@@ -38,6 +49,7 @@
 
 .tweet header img {
   border-radius: 5px;
+  float: left;
 }
 
 .tweet footer {
