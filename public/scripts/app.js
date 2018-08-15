@@ -104,8 +104,7 @@ $(document).ready(function() {
 
   $("form > input").click(function (event){
     event.preventDefault();
-    console.log(event);
-    // $(this).method()
+    $.post("/tweets", $('form').serialize());
   });
 
 });
