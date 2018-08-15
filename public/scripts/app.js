@@ -46,14 +46,30 @@ $(document).ready(function() {
     return $tweet;
   };
 
-  // appends tweets to DOM
+  // appends tweets from JSON to DOM
   function renderTweets(tweets) {
     for (let tweet of tweets) {
       let newTweet = createTweetElement(tweet);
       $('#tweetholder').append(newTweet);
     }
   };
-  
+
+  // prepends new tweet to DOM
+  function renderSingleTweet(tweet) {
+    $('#tweetholder').prepend(createTweetElement(tweet));
+  }
+
+  // fetches last tweet added to /tweets JSON object
+  function loadNewTweet() {
+    $.ajax({
+      method: "GET",
+      url: "/tweets"
+    })
+    .then(function (tweets){
+      renderSingleTweet(tweets[tweets.length - 1]);
+    });
+  }; 
+
   //fetches tweets from /tweets page (JSON object)
   function loadTweets() {
     $.ajax({
@@ -79,6 +95,7 @@ $(document).ready(function() {
       alert("Too long -- 140 characters max!")
     } else {
       $.post("/tweets", $("form").serialize());
+      loadNewTweet();
     }
   });
 
