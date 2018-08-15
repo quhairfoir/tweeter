@@ -136,6 +136,7 @@ $(document).ready(function() {
   // hide compose tweet sectin when #compose button clicked
   $("#compose").on("click", (event) => {
     toggleElementAndClass(".new-tweet", "#compose", "clicked");
+    $("textarea").focus();
     console.log("CLICK");
   });
 

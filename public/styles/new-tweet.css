@@ -19,7 +19,10 @@
 .new-tweet textarea {
   padding: .5em;
   width: 95%;
-  
+}
+
+.new-tweet textarea:focus {
+  outline: 0;
 }
 
 .new-tweet input {
