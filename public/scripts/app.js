@@ -101,14 +101,19 @@ $(document).ready(function() {
   $("form").on("submit", (event) => {
     event.preventDefault();
     let text = event.target[0].value;
-    if (text === null) {
-      alert("Something's wrong!");
-    } else if (!text) {
-      alert("Can't post an empty tweet!");
+    if ($("textarea").hasClass("error")){
+      toggleElementAndClass("#errorMessage", "textarea", "error");
+      $("#errorMessage").val("");
+    } 
+    if (!text) {
+      $("#errorMessage").text("Tweets must contain text!");
+      toggleElementAndClass("#errorMessage", "textarea", "error");
     } else if (text.length > 140) {
-      alert("Too long -- 140 characters max!")
+      $("#errorMessage").text("Your tweet is too long!");
+      toggleElementAndClass("#errorMessage", "textarea", "error");
     } else {
       $.post("/tweets", $("form").serialize());
+      $("form").trigger("reset");
       loadNewTweet();
     }
   });
@@ -122,7 +127,7 @@ $(document).ready(function() {
     }
   };
 
-  // reusable function to toggle an element's visibility
+  // reusable function to toggle an element's visibility and second element's class
   function toggleElementAndClass (elem1, elem2, className) {
     if ( $(elem1).css("display") === "block") {
       $(elem1).css("display", "none");
