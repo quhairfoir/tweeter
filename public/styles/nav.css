@@ -22,3 +22,24 @@
   margin-left: 10px;
   line-height: 2.5em;
 }
+
+#nav-bar button {
+  float: right;
+  width: 120px;
+  height: 50px;
+  margin: 15px;
+  border: 1.5px solid #244751;
+  border-radius: 5px;
+  color: #244751;
+  background-color: white;
+}
+
+#nav-bar button.clicked {
+  color: #00a087;
+  background-color: #e5f5f3;
+  outline: 0;
+}
+
+#nav-bar button:focus {
+  outline: 0;
+}

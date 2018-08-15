@@ -4,6 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+
  // function to convert js miliseconds to readable date
 function timeSince(date) {
   var seconds = Math.floor((new Date() - date) / 1000);
@@ -110,6 +111,32 @@ $(document).ready(function() {
       $.post("/tweets", $("form").serialize());
       loadNewTweet();
     }
+  });
+
+  // reusable function to toggle class on an element
+  function toggleClass(elem, className) {
+    if (!$(elem).hasClass(className)) {
+      $(elem).addClass(className);
+    } else {
+      $(elem).removeClass(className);
+    }
+  };
+
+  // reusable function to toggle an element's visibility
+  function toggleElementAndClass (elem1, elem2, className) {
+    if ( $(elem1).css("display") === "block") {
+      $(elem1).css("display", "none");
+      toggleClass(elem2, className);
+    } else {
+      $(elem1).css("display", "block");
+      toggleClass(elem2, className);
+    }
+  };
+
+  // hide compose tweet sectin when #compose button clicked
+  $("#compose").on("click", (event) => {
+    toggleElementAndClass(".new-tweet", "#compose", "clicked");
+    console.log("CLICK");
   });
 
 });
