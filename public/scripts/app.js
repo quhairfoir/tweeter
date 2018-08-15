@@ -127,13 +127,17 @@ $(document).ready(function() {
     }
   };
 
+  //hides hidden elements
+  $(".new-tweet").hide();
+  $("#errorMessage").hide()
+
   // reusable function to toggle an element's visibility and second element's class
   function toggleElementAndClass (elem1, elem2, className) {
-    if ( $(elem1).css("display") === "block") {
-      $(elem1).css("display", "none");
+    if ($(elem1).is(":hidden")) {
+      $(elem1).slideDown("slow");
       toggleClass(elem2, className);
     } else {
-      $(elem1).css("display", "block");
+      $(elem1).hide();
       toggleClass(elem2, className);
     }
   };
