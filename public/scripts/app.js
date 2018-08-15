@@ -48,7 +48,6 @@ $(document).ready(function() {
 
   // appends tweets to DOM
   function renderTweets(tweets) {
-    console.log(tweets);
     for (let tweet of tweets) {
       let newTweet = createTweetElement(tweet);
       $('#tweetholder').append(newTweet);
@@ -61,17 +60,26 @@ $(document).ready(function() {
       method: "GET",
       url: "/tweets"
     })
-    .then(function (something){
-      renderTweets(something);
+    .then(function (tweets){
+      renderTweets(tweets);
     });
   }; 
   
   loadTweets();
 
-  // AJAX "POST" request 
+  // AJAX "POST" request, includes validation for tweet body
   $("form").on("submit", (event) => {
     event.preventDefault();
-    $.post("/tweets", $("form").serialize());
+    let text = event.target[0].value;
+    if (text === null) {
+      alert("Something's wrong!");
+    } else if (!text) {
+      alert("Can't post an empty tweet!");
+    } else if (text.length > 140) {
+      alert("Too long -- 140 characters max!")
+    } else {
+      $.post("/tweets", $("form").serialize());
+    }
   });
 
 });
