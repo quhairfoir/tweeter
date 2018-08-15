@@ -30,18 +30,31 @@ function timeSince(date) {
   return Math.floor(seconds) + " seconds";
 };
 
+// escape function to prevent XSS
+function escape(str) {
+  var div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
+
 //jQuery functions and code
 $(document).ready(function() {
 
   // creates properly formatted html object for tweet
   function createTweetElement (tweetObj) {
     let $tweet = $("<article>").addClass("tweet");
+    // create and add header 
     let $header = $("<header>");
-    $($header).append("<h2>" + tweetObj.user.name + "</h2>");
-    $($header).append('<img src="'+ tweetObj.user.avatars.small + '">');
-    $($header).append("<p>" + tweetObj.user.handle + "</p>");
+      let $name = $("<h2>").text(tweetObj.user.name);
+      $($header).append($name);
+      $($header).append('<img src="'+ tweetObj.user.avatars.small + '">');
+      let $handle = $("<p>").text(tweetObj.user.handle);
+      $($header).append($handle);
     $tweet.append($header);
-    $tweet.append("<p>" + tweetObj.content.text + "</p>");
+    // create and add tweet body
+    let $tweetText = $("<p>").text(tweetObj.content.text);
+    $tweet.append($tweetText);
+    // create and add footer
     $tweet.append('<footer>' + timeSince(tweetObj.created_at) + ' ago<i class="fas fa-heart"></i><i class="fas fa-retweet"></i><i class="fas fa-flag"></i></footer>');
     return $tweet;
   };
