@@ -11,39 +11,39 @@ const app           = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-// // mongo db requirements and connection
-// const MongoClient = require("mongodb").MongoClient;
-// const MONGODB_URI = "mongodb://localhost:27017/tweeter";
+let db;
 
-// MongoClient.connect(MONGODB_URI, (err, db) => {
-//   if (err) {
-//     console.error(`Failed to connect: ${MONGODB_URI}`);
-//     throw err;
-//   }
+// mongo db requirements and connection
+const MongoClient = require("mongodb").MongoClient;
+const MONGODB_URI = "mongodb://localhost:27017/tweeter";
 
-//   console.log(`Connected to mongodb: ${MONGODB_URI}`);
+MongoClient.connect(MONGODB_URI, (err, mongoInstance) => {
+  if (err) {
+    console.error(`Failed to connect: ${MONGODB_URI}`);
+    throw err;
+  }
 
-//   // function getTweets(callback) {
-//   //  return db.collection("tweets").find().toArray(callback);
-//   // };
+  console.log(`Connected to mongodb: ${MONGODB_URI}`);
 
-//   // getTweets((err, tweets) => {
-//   //   if(err) throw err;
-//   //   data = {tweets: tweets};
-//   //   console.log(data);
-//   // });
+  function getTweets(callback) {
+    return db.collection("tweets").find().toArray(callback);
+   };
 
-//   const data = {tweets: db.collection("tweets").find().toArray()};
+  db = mongoInstance;
 
-  
+});
 
-//   db.close();
-// });
 
+
+let data = {tweets: getTweets((err, tweets) => {
+  if(err) throw err;
+  return tweets;
+})};
+// const db = require("./lib/in-memory-db");
 
 // The `tweets-routes` module works similarly: we pass it the `DataHelpers` object
 // so it can define routes that use it to interact with the data layer.
-const DataHelpers = require("./lib/data-helpers.js")(db);
+const DataHelpers = require(data);
 
 const tweetsRoutes = require("./routes/tweets")(DataHelpers);
 
