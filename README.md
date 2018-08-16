@@ -6,9 +6,9 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Screenshots
 
-!["Screenshot of tweet being composed"]
-!["Screenshot of tweets"]
-!["Screenshot of error message"]
+!["Screenshot of tweet being composed"](https://github.com/quhairfoir/tweeter/blob/master/docs/compose.png?raw=true)
+!["Screenshot of tweets"](https://github.com/quhairfoir/tweeter/blob/master/docs/landing.png?raw=true)
+!["Screenshot of error message"](https://github.com/quhairfoir/tweeter/blob/master/docs/error.png?raw=true)
 
 ## Getting Started
 
