@@ -19,6 +19,8 @@
 .new-tweet textarea {
   padding: .5em;
   width: 95%;
+  resize: none;
+  word-wrap: break-word;
 }
 
 .new-tweet textarea:focus {

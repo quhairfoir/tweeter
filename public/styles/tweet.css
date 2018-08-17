@@ -45,6 +45,7 @@
 
 .tweet p {
   padding: 25px 5px 25px 5px;
+  word-wrap: break-word;
 }
 
 .tweet header img {
